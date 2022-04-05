@@ -76,7 +76,7 @@ def show_predict_page():
     orgsize = st.selectbox("Company Size", orgsizes)
     gender = st.selectbox("Gender", genders)
 
-    experience = st.slider("Years of Experience", 0, age_max, 3)
+    experience = st.slider("Years of Experience", 0, int(age_max), 3)
 
     ok = st.button("Calculate Salary")
     if ok:
