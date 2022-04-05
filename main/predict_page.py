@@ -45,6 +45,23 @@ def show_predict_page():
        '18-24 years old', '55-64 years old', '65 years or older',
        'Under 18 years old', 'Prefer not to say')
 
+    if (age =='Under 18 years old'):
+        age_max = 18
+    elif (age == '18-24 years old'):
+        age_max = 24
+    elif (age == '18-24 years old'):
+        age_max = 24
+    elif (age == '25-34 years old'):
+        age_max = 34
+    elif (age == '35-44 years old'):
+        age_max = 44
+    elif (age == '45-54 years old'):
+        age_max = 54
+    elif (age == '55-64 years old'):
+        age_max = 64
+    else:
+        age_max = 99
+
     orgsizes = ('10 to 19 employees', '1,000 to 4,999 employees',
        '100 to 499 employees', '500 to 999 employees',
        '5,000 to 9,999 employees', '2 to 9 employees',
@@ -59,7 +76,7 @@ def show_predict_page():
     orgsize = st.selectbox("Company Size", orgsizes)
     gender = st.selectbox("Gender", genders)
 
-    experience = st.slider("Years of Experience", 0, 50, 3)
+    experience = st.slider("Years of Experience", 0, age_max, 3)
 
     ok = st.button("Calculate Salary")
     if ok:
